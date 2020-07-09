@@ -1,0 +1,59 @@
+##Itertools (Pemutations and Combinations)
+  1.itertools.permutations(iterable[, r])
+      #(This tool returns successive r length permutations of elements in an iterable.)
+      #Code
+      from itertools import permutations
+      S,K=input().split()
+      C=list(permutations(S,int(K)))
+      C.sort()
+      for i in C:
+        for j in i:
+           print(j,end="")
+        print()
+      #Input
+       HACK 2
+      #Output
+       	AC
+	AH
+	AK
+	CA
+	CH
+	CK
+	HA
+	HC
+	HK
+	KA
+	KC
+	KH
+	#Explanation
+	All possible size 2 permutations of the string "HACK" are printed in lexicographic sorted order.
+  2.itertools.combinations(iterable, r)
+      #(This tool returns the r length subsequences of elements from the input iterable.)
+      #Code
+        from itertools import combinations
+	R=[]
+	S,K=input().split()
+	S1=sorted(S)
+	for i in range(1,int(K)+1):
+    		C=list(combinations(S1,i))
+    		for j in C:
+       			R.append(j)	
+	for i in R:
+    		for j in i:
+        		print(j,end="")
+    		print()
+      #Input
+       HACK 2
+      #Output
+        A
+	C
+	H
+	K
+	AC
+	AH
+	AK
+	CH
+	CK
+	HK
+     ##Explanation
+	all possible combinations up to size K of the string in lexicographic sorted order.
